@@ -1,0 +1,81 @@
+.header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logoIcon { font-size: 28px; }
+
+.logoText { display: flex; flex-direction: column; line-height: 1.2; }
+
+.logoMain {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.3px;
+}
+
+.logoSub {
+  font-size: 11px;
+  color: var(--text-3);
+  font-weight: 400;
+}
+
+.nav { display: flex; align-items: center; gap: 14px; }
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-2);
+  text-decoration: none;
+  transition: all var(--tr);
+}
+.backBtn:hover { border-color: var(--accent-2); color: var(--accent-2); }
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  border-radius: var(--r);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-2);
+}
+
+.badgeIcon { font-size: 15px; }
+
+@media (max-width: 480px) {
+  .inner { padding: 0 14px; }
+  .logoSub { display: none; }
+}

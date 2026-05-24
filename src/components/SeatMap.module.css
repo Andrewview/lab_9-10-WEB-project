@@ -1,0 +1,135 @@
+.wrapper {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.dotFree     { background: var(--green); }
+.dotSelected { background: var(--accent-2); }
+.dotBooked   { background: var(--red); }
+
+.counter {
+  font-size: 13px;
+  color: var(--text-2);
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  border-radius: var(--r);
+  padding: 8px 14px;
+  margin-bottom: 14px;
+}
+.counter strong { color: var(--accent-2); }
+
+/* Схема вагону */
+.mapWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px 0;
+}
+
+.wagonHead,
+.wagonTail {
+  font-size: 11px;
+  color: var(--text-3);
+  padding: 4px 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.grid {
+  display: grid;
+  gap: 6px;
+  padding: 12px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+}
+
+/* Місце */
+.seat {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r);
+  border: 1.5px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all var(--tr);
+  font-family: var(--mono);
+}
+
+/* Вільне — зелений */
+.free {
+  background: var(--green-dim);
+  border-color: var(--green);
+  color: var(--green);
+}
+.free:hover {
+  background: var(--green);
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(16,185,129,0.4);
+}
+
+/* Обране — синій */
+.selected {
+  background: var(--accent);
+  border-color: var(--accent-2);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(59,130,246,0.5);
+}
+
+/* Заброньоване — червоний */
+.booked {
+  background: var(--red-dim);
+  border-color: var(--red);
+  color: var(--red);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.seatNum { line-height: 1; }
+
+@media (max-width: 500px) {
+  .seat { width: 38px; height: 38px; font-size: 11px; }
+  .grid { gap: 4px; padding: 8px; }
+}
