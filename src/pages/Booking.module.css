@@ -1,0 +1,180 @@
+.page { min-height: calc(100vh - 64px); }
+
+/* ── Banner ─────────────────────────────────── */
+.trainBanner {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 24px;
+}
+
+.bannerInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.4s cubic-bezier(0.16,1,0.3,1) both;
+}
+
+.bannerLeft { display: flex; flex-direction: column; gap: 4px; }
+
+.trainNum { font-size: 12px; color: var(--text-3); font-family: var(--mono); }
+
+.bannerRoute {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.5px;
+}
+
+.bannerArrow { color: var(--accent-2); }
+
+.bannerRight { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; }
+
+.bannerTime { font-size: 18px; font-weight: 700; color: var(--text); }
+.bannerDate { font-size: 13px; color: var(--text-3); }
+
+/* ── Content ─────────────────────────────────── */
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 24px 60px;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px;
+  align-items: start;
+}
+
+.left  { display: flex; flex-direction: column; gap: 0; }
+.right { position: sticky; top: 84px; }
+
+.hint {
+  padding: 20px;
+  text-align: center;
+  color: var(--text-3);
+  font-size: 14px;
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--r-xl);
+}
+
+/* ── Loading / Error ─────────────────────────── */
+.center {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.spinner {
+  width: 40px; height: 40px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent-2);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.backBtn {
+  padding: 10px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  color: var(--text-2);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all var(--tr);
+}
+.backBtn:hover { border-color: var(--accent-2); color: var(--accent-2); }
+
+/* ── Success ─────────────────────────────────── */
+.successWrap {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.successCard {
+  max-width: 480px;
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  animation: fadeIn 0.5s cubic-bezier(0.16,1,0.3,1) both;
+}
+
+.successIcon { font-size: 52px; }
+
+.successTitle {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.successSub { font-size: 14px; color: var(--text-3); }
+
+.ticketInfo {
+  width: 100%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.ticketRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.ticketRow span { color: var(--text-3); }
+.ticketRow strong { color: var(--text); }
+
+.successActions { width: 100%; }
+
+.primaryBtn {
+  width: 100%;
+  padding: 14px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--r-lg);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--tr);
+}
+
+.primaryBtn:hover {
+  background: var(--accent-2);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(59,130,246,0.4);
+}
+
+@media (max-width: 768px) {
+  .content { grid-template-columns: 1fr; }
+  .right   { position: static; }
+}
+
+@media (max-width: 480px) {
+  .content { padding: 20px 14px 48px; }
+  .bannerRoute { font-size: 18px; }
+}
